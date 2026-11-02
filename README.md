@@ -1,18 +1,18 @@
 # free-apis-for-automators
 
-**40 free/no-key APIs curated for workflow builders and automation engineers — with live health-check status and an auto-maintenance script.**
+**41 free/no-key APIs curated for workflow builders and automation engineers — with live health-check status and an auto-maintenance script.**
 
-Machine-verified **2026-09-05**: `36 ok · 1 rate-limited-but-alive · 2 POST-only (404 on GET, expected) · 1 flaky (flagged)`.
+Baseline machine-verified **2026-09-05**: `36 ok · 1 rate-limited-but-alive · 2 POST-only (404 on GET, expected) · 1 flaky (flagged)`.
 
 ## Why this dataset
 
-Every automation project starts with the same half-hour: *"is there a free API for…?"* — then click-roulette through directory sites full of dead links and "free trial" walls. This is the pre-solved version: 40 endpoints that automation builders actually use (weather, FX, alerts, holidays, test data, cheap AI, geo-ip, archives), each with the exact idea of what to automate with it.
+Every automation project starts with the same half-hour: *"is there a free API for…?"* — then click-roulette through directory sites full of dead links and "free trial" walls. This is the pre-solved version: 41 endpoints that automation builders actually use (weather, FX, alerts, holidays, test data, cheap AI, geo-ip, archives), each with the exact idea of what to automate with it.
 
 ## The data
 
 | | |
 |---|---|
-| Rows | 40 APIs |
+| Rows | 41 APIs |
 | Columns | `name, category, base_url, key_required, auth, notes, docs, automation_idea, last_checked, http_status` |
 | Formats | `data/free_apis.csv` · `data/free_apis.json` |
 | License | **CC0** — public domain, no attribution required |
@@ -40,7 +40,7 @@ no_key_apis = [r for r in ds if r["key_required"] == "no"]
 Most API lists rot. This one ships with its own health-checker:
 
 ```bash
-node tools/verify_urls.mjs     # GETs all 40, stamps last_checked + http_status, rebuilds JSON
+node tools/verify_urls.mjs     # GETs all 41, stamps last_checked + http_status, rebuilds JSON
 ```
 
 Run it weekly (or as an n8n scheduled workflow — that's the point). Green rows = still free & alive. The `http_status` legend: `2xx` ok · `403/429` alive-but-bot-blocked · `404` POST-only endpoint (annotation in notes) · `ERR:*` unreachable.
