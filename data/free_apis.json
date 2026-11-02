@@ -478,5 +478,17 @@
     "automation_idea": "Launch-day reminder bot",
     "last_checked": "2026-09-05",
     "http_status": "200"
+  },
+  {
+    "name": "Bucketlist Dream of the Day",
+    "category": "fun",
+    "base_url": "https://bucketlist.nl/api/droom-van-de-dag",
+    "key_required": "no",
+    "auth": "none",
+    "notes": "One experience per day; defaults to Dutch/Netherlands. Five documented languages and Netherlands/world scopes. Cache responses; provider/partner content terms apply.",
+    "docs": "https://bucketlist.nl/brand/droom-van-de-dag.openapi.json",
+    "automation_idea": "Add a cached daily activity suggestion to an outings planner",
+    "last_checked": "2026-11-02",
+    "http_status": "200"
   }
 ]
